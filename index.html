@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIRIO - Investigación y Análisis Veterinario</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <nav class="menu">
+    <button onclick="mostrarSeccion('login')">Inicio Sesión</button>
+    <button onclick="mostrarSeccion('recuperar')">Recuperar Clave</button>
+    <button onclick="mostrarSeccion('nueva-clave')">Nueva Contraseña</button>
+    <button onclick="mostrarSeccion('ingreso-resultados')">Ingreso Resultados</button>
+    <button onclick="mostrarSeccion('datos-paciente')">Datos Paciente</button>
+    <button onclick="mostrarSeccion('pdf-resultados')">PDF Resultado</button>
+  </nav>
+
+  <div class="logo-bg">SIRIO</div>
+
+  <section class="active" id="login">
+    <h2>INICIO SESIÓN</h2>
+    <label>Correo electrónico:</label>
+    <input type="email" placeholder="ejemplo@correo.com" />
+    <label>Contraseña:</label>
+    <input type="password" placeholder="********" />
+    <button>ENVIAR</button>
+  </section>
+
+  <section id="recuperar">
+    <h2>¿OLVIDÓ SU CONTRASEÑA?</h2>
+    <input type="email" placeholder="Ingrese su correo electrónico" />
+    <input type="text" placeholder="Ingrese el código de confirmación" />
+    <p class="small">Revise su correo electrónico para recuperar su contraseña</p>
+    <button>RECUPERAR</button>
+  </section>
+
+  <section id="nueva-clave">
+    <h2>RECUPERACIÓN DE CONTRASEÑA</h2>
+    <input type="password" placeholder="Nueva contraseña" />
+    <input type="password" placeholder="Confirmar nueva contraseña" />
+    <button>INGRESAR</button>
+  </section>
+
+  <section id="ingreso-resultados">
+    <h2>RESULTADOS</h2>
+    <label>Código del paciente:</label>
+    <input type="text" placeholder="Ej. 001245" />
+    <label>Exámenes:</label>
+    <input type="text" placeholder="Ej. Parvovirus" />
+    <button>AGREGAR EXAMEN +</button>
+  </section>
+
+  <section id="datos-paciente">
+    <h2>INFORMACIÓN DEL PACIENTE</h2>
+    <p>NOMBRE: __________</p>
+    <p>EDAD: __________</p>
+    <p>PROPIETARIO: __________</p>
+    <p>RAZA: __________</p>
+    <p>CLÍNICA VETERINARIA: __________</p>
+    <p>MÉDICO VETERINARIO: __________</p>
+    <label>Examen:</label>
+    <input type="text" value="Parvovirus Canino" readonly />
+    <label>Resultado:</label>
+    <input type="text" placeholder="Resultado del examen" />
+    <button>ENVIAR</button>
+    <button>REVISAR</button>
+  </section>
+
+  <section id="pdf-resultados">
+    <h2>INFORMACIÓN DEL PACIENTE</h2>
+    <p>NOMBRE: __________</p>
+    <p>EDAD: __________</p>
+    <p>PROPIETARIO: __________</p>
+    <p>RAZA: __________</p>
+    <p>CLÍNICA VETERINARIA: __________</p>
+    <p>MÉDICO VETERINARIO: __________</p>
+    <div class="pdf-box">
+      <p>📄 PDF</p>
+    </div>
+    <button>ENVIAR</button>
+  </section>
+
+  <script>
+    function mostrarSeccion(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
